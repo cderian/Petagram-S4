@@ -21,10 +21,5 @@ public class AboutActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.actionBar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        String bio = "Derian Estrada\nLic. en Ciencias de la Computación\ncesderian@gmail.com";
-
-        textView = findViewById(R.id.textView);
-        textView.setText(bio);
     }
 }

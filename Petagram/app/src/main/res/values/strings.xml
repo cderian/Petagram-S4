@@ -23,8 +23,8 @@
     <string name="email_invalido">Correo inválido - Verifica que este escrito correctamente</string>
 
     <!-- String about -->
-    <string name="bio">César Derian Estrada Gómez Lic. en Ciencias de la Computación cesderian@gmail.com</string>
+    <string name="name_bio">Derian Estrada</string>
+    <string name="grade_bio">Desarrollador</string>
+    <string name="school_bio">Facultad de Ciencias UNAM</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

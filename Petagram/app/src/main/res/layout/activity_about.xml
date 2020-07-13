@@ -14,16 +14,36 @@
         <include android:id="@+id/actionBar"
             layout="@layout/actionbar_about"/>
 
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="30dp"
+            android:src="@drawable/image_user"
+            android:layout_gravity="center"/>
+
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:textSize="@dimen/text_about"
             android:textStyle="bold"
-            android:text=""/>
+            android:text="@string/name_bio"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_about"
+            android:textStyle="italic"
+            android:text="@string/grade_bio"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_about"
+            android:textStyle="italic"
+            android:text="@string/school_bio"/>
 
     </LinearLayout>
 
