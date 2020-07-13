@@ -39,7 +39,7 @@ public class PetFragmentAdapter extends RecyclerView.Adapter<PetFragmentAdapter.
     public void onBindViewHolder(@NonNull PetViewHolder holder, int position) {
         final Mascota mascota = mascotas.get(position);
         holder.imgPetCdVw.setImageResource(mascota.getFoto());
-        holder.txtRatePetCdVw.setText(String.valueOf(mascota.getLikes()));
+        holder.likePhoto.setText(String.valueOf(mascota.getLikes()));
     }
 
     @Override
@@ -49,14 +49,14 @@ public class PetFragmentAdapter extends RecyclerView.Adapter<PetFragmentAdapter.
 
     public static class PetViewHolder extends RecyclerView.ViewHolder {
         private ImageView imgPetCdVw;
-        private TextView txtRatePetCdVw;
+        private TextView likePhoto;
         private ImageButton btnLike;
 
         public PetViewHolder (@NonNull View itemView) {
             super(itemView);
 
             imgPetCdVw = itemView.findViewById(R.id.imgPetCdVw);
-            txtRatePetCdVw = itemView.findViewById(R.id.txtRatePetCdVw);
+            likePhoto = itemView.findViewById(R.id.likePhoto);
             btnLike = itemView.findViewById(R.id.btnLike);
         }
     }

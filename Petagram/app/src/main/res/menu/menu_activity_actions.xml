@@ -14,5 +14,5 @@
         android:title="@string/action_fav_pets"
         android:orderInCategory="102"
         app:showAsAction="always"
-        android:icon="@drawable/ic_action_fav" />
+        android:icon="@drawable/ic_action_fav"/>
 </menu>

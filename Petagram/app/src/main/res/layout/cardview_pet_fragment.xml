@@ -18,8 +18,8 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/imgPetCdVw"
-            android:layout_width="@dimen/cardview_image"
-            android:layout_height="@dimen/cardview_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:src="@drawable/logo_pet"
             android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"
@@ -35,7 +35,7 @@
             android:layout_gravity="center">
 
             <TextView
-                android:id="@+id/txtRatePetCdVw"
+                android:id="@+id/likePhoto"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -48,8 +48,8 @@
 
             <ImageView
                 android:id="@+id/imgRate"
-                android:layout_width="40dp"
-                android:layout_height="38dp"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:background="@drawable/hueso_fav" />

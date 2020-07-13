@@ -14,14 +14,16 @@ import android.widget.TextView;
 import com.cderian.petagram.R;
 import com.cderian.petagram.adapter.PetFragmentAdapter;
 import com.cderian.petagram.pojo.Mascota;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.util.ArrayList;
 
 public class PetFragment extends Fragment {
 
-    private RecyclerView recyclerView;
+    private CircularImageView imagePet;
+    private RecyclerView photosPet;
     private ArrayList<Mascota> mascotas;
-    private TextView textView;
+    private TextView namePet;
 
     public PetFragment() { }
 
@@ -29,10 +31,12 @@ public class PetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_pet, container, false);
-        recyclerView = v.findViewById(R.id.photosPet);
-        textView = v.findViewById(R.id.namePet);
+        imagePet = v.findViewById(R.id.imagePet);
+        namePet = v.findViewById(R.id.namePet);
+        photosPet = v.findViewById(R.id.photosPet);
+
         GridLayoutManager mglm=new GridLayoutManager(getContext(),3);
-        recyclerView.setLayoutManager(mglm);
+        photosPet.setLayoutManager(mglm);
 
         initList();
         initAdapter();
@@ -51,11 +55,12 @@ public class PetFragment extends Fragment {
         mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
         mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
 
-        textView.setText(mascotas.get(1).getNombre());
+        imagePet.setImageResource(mascotas.get(1).getFoto());
+        namePet.setText(mascotas.get(1).getNombre());
 
     }
     public void initAdapter(){
         PetFragmentAdapter adaptador = new PetFragmentAdapter(mascotas, getActivity());
-        recyclerView.setAdapter(adaptador);
+        photosPet.setAdapter(adaptador);
     }
 }
