@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.cderian.petagram.R;
-import com.cderian.petagram.adapter.PetAdapter;
+import com.cderian.petagram.adapter.PetFragmentAdapter;
 import com.cderian.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -48,12 +48,14 @@ public class PetFragment extends Fragment {
         mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
         mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
         mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
+        mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
+        mascotas.add(new Mascota(1, "Rex", R.drawable.perro2));
 
         textView.setText(mascotas.get(1).getNombre());
 
     }
     public void initAdapter(){
-        PetAdapter adaptador = new PetAdapter(mascotas, getActivity());
+        PetFragmentAdapter adaptador = new PetFragmentAdapter(mascotas, getActivity());
         recyclerView.setAdapter(adaptador);
     }
 }
