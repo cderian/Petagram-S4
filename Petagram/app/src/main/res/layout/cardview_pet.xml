@@ -7,12 +7,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:elevation="4dp"
-    android:layout_marginBottom="@dimen/cardview_margin"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
     card_view:cardCornerRadius="@dimen/cardview_corner">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -29,67 +31,51 @@
             app:civ_shadow_radius="10dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="40dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/hueso" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/btnLike"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/hueso"
-                        />
-
-                    <TextView
-                        android:id="@+id/txtNombrePetCdVw"
-                        android:layout_width="wrap_content"
-                        android:layout_height="50dp"
-                        android:gravity="center"
-                        android:text="@string/cardview_nombre"
-                        android:textSize="@dimen/cardview_text"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryText"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                android:id="@+id/txtNombrePetCdVw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:text="@string/cardview_nombre"
+                android:textSize="@dimen/cardview_text"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryText"/>
 
-                <TextView
-                    android:id="@+id/txtRatePetCdVw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="end"
-                    android:text="@string/cardview_like"
-                    android:textSize="@dimen/cardview_text"
-                    android:textColor="@color/colorAccent"/>
+            <TextView
+                android:id="@+id/txtRatePetCdVw"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:paddingStart="40dp"
+                android:text="@string/cardview_like"
+                android:textSize="@dimen/cardview_text"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"/>
 
-                <ImageView
-                    android:id="@+id/imgRate"
-                    android:layout_width="25dp"
-                    android:layout_height="@dimen/cardview_image_like"
-                    android:layout_marginTop="30dp"
-                    android:layout_gravity="end"
-                    android:background="@drawable/hueso_amarillo" />
-
-            </LinearLayout>
-
+            <ImageView
+                android:id="@+id/imgRate"
+                android:layout_width="40dp"
+                android:layout_height="38dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:background="@drawable/hueso_fav" />
 
         </LinearLayout>
     </LinearLayout>
