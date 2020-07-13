@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
     private void setUpViewPager() {
         viewPager.setAdapter(new PageAdapter(getSupportFragmentManager(), agregarFragments()));
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_pethome);
+        tabLayout.getTabAt(0).setIcon(R.drawable.ic_pet_home);
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_pet);
     }
 }
