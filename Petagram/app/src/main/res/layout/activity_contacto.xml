@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu.ContactoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include android:id="@+id/actionBar"
+            layout="@layout/actionbar_contacto"/>
+
+        <!-- Apartado del nombre del contacto -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTxtNombre"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_nombre"
+            android:layout_margin="@dimen/margin_input"
+            app:boxCornerRadiusBottomEnd="@dimen/corner_input_box"
+            app:boxCornerRadiusBottomStart="@dimen/corner_input_box"
+            app:boxCornerRadiusTopEnd="@dimen/corner_input_box"
+            app:boxCornerRadiusTopStart="@dimen/corner_input_box"
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="75"
+            android:layout_below="@id/actionBar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_user"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Apartado del email del contacto -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTxtEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_email"
+            android:layout_margin="@dimen/margin_input"
+            app:boxCornerRadiusBottomEnd="@dimen/corner_input_box"
+            app:boxCornerRadiusBottomStart="@dimen/corner_input_box"
+            app:boxCornerRadiusTopEnd="@dimen/corner_input_box"
+            app:boxCornerRadiusTopStart="@dimen/corner_input_box"
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="50">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Apartado del mensaje al contacto -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputTxtMensaje"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_mensaje"
+            android:layout_margin="@dimen/margin_input"
+            app:boxCornerRadiusBottomEnd="@dimen/corner_input_box"
+            app:boxCornerRadiusBottomStart="@dimen/corner_input_box"
+            app:boxCornerRadiusTopEnd="@dimen/corner_input_box"
+            app:boxCornerRadiusTopStart="@dimen/corner_input_box"
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="255">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_create"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón Siguiente -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_input">
+
+            <Button
+                android:id="@+id/btnEnviar"
+                android:layout_width="@dimen/button_width"
+                android:layout_height="@dimen/button_height"
+                android:elevation="5dp"
+                android:shadowRadius="20"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="@string/boton_siguiente"
+                android:theme="@style/MyButtonRaised"
+                android:textSize="@dimen/button_text" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

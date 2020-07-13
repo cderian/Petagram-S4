@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="app_name">20dp</dimen>
+    <dimen name="cardview_width">180dp</dimen>
+    <dimen name="cardview_margin">16dp</dimen>
+    <dimen name="cardview_corner">10dp</dimen>
+    <dimen name="cardview_text">25dp</dimen>
+    <dimen name="cardview_image">150dp</dimen>
+    <dimen name="cardview_image_like">15dp</dimen>
+
+    <dimen name="margin_input">18dp</dimen>
+    <dimen name="corner_input_box">10dp</dimen>
+    <dimen name="button_width">225dp</dimen>
+    <dimen name="button_height">50dp</dimen>
+    <dimen name="button_text">18dp</dimen>
+
+    <dimen name="text_about">25sp</dimen>
+    <dimen name="text_actionbar">25sp</dimen>
+</resources>

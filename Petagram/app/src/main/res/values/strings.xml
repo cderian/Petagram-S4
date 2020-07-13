@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Petagram</string>
+    <string name="favs_label">Los Favoritos</string>
+    <string name="contact_label">Contacto</string>
+    <string name="about_label">Acerca De</string>
+
+    <!-- Strings cardviews -->
+    <string name="cardview_nombre">Catty</string>
+    <string name="cardview_like">0</string>
+
+    <!-- Strings menú -->
+    <string name="action_fav_pets">Fav Pets</string>
+    <string name="action_settings">Menú</string>
+    <string name="menu_contact">Contacto</string>
+    <string name="menu_about">Acerca de</string>
+
+    <!-- Strings acción enviar email -->
+    <string name="hint_nombre">Nombre con al menos un apellido</string>
+    <string name="hint_email">Hint: usuario@mail.com</string>
+    <string name="hint_mensaje">Envía un mensaje a tu contacto</string>
+    <string name="boton_siguiente">Enviar comentario</string>
+    <string name="nombre_nulo">Nombre inválido - Verifica que hayas escrito el nombre del contacto</string>
+    <string name="email_invalido">Correo inválido - Verifica que este escrito correctamente</string>
+
+    <!-- String about -->
+    <string name="bio">César Derian Estrada Gómez Lic. en Ciencias de la Computación cesderian@gmail.com</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
