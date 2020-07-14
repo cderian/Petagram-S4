@@ -16,7 +16,7 @@
         android:id="@+id/imagePet"
         android:layout_width="@dimen/cardview_image"
         android:layout_height="@dimen/cardview_image"
-        android:src="@drawable/logo_petagram"
+        android:src="@drawable/petagram"
         android:scaleType="centerCrop"
         android:layout_gravity="center_horizontal"
         app:civ_border_color="@color/colorAccent"
