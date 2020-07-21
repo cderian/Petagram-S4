@@ -7,6 +7,8 @@ public class Mascota {
     private int likes;
     private int foto;
 
+    public Mascota () {}
+
     public Mascota(int id, String nombre, int foto) {
         this.id = id;
         this.nombre = nombre;

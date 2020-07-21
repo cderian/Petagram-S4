@@ -13,44 +13,41 @@ import android.view.ViewGroup;
 import com.cderian.petagram.R;
 import com.cderian.petagram.adapter.PetAdapter;
 import com.cderian.petagram.pojo.Mascota;
+import com.cderian.petagram.presenter.HomeFragmentPresenter;
+import com.cderian.petagram.presenter.IHomeFragmentPresenter;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements IHomeFragmentView {
 
+    private RecyclerView rvMascotas;
+    private IHomeFragmentPresenter presenter;
     ArrayList<Mascota> mascotas;
-    private RecyclerView listaMascotas;
-
-    public HomeFragment() { }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
-        listaMascotas = v.findViewById(R.id.allPetsView);
-        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
-        listaMascotas.setLayoutManager(llm);
-        inicializarMascotas();
-        inicializarAdaptador();
+        rvMascotas = v.findViewById(R.id.allPetsView);
+        presenter = new HomeFragmentPresenter(this, getContext());
 
         return  v;
     }
 
-    public void inicializarMascotas() {
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(1, "Toby", R.drawable.perro1));
-        mascotas.add(new Mascota(2, "Rex", R.drawable.perro2));
-        mascotas.add(new Mascota(3, "Max", R.drawable.perro3));
-        mascotas.add(new Mascota(4, "Bones", R.drawable.perro4));
-        mascotas.add(new Mascota(5, "Zeus", R.drawable.perro5));
-        mascotas.add(new Mascota(6, "Besheen", R.drawable.perro6));
-        mascotas.add(new Mascota(7, "Negro", R.drawable.perro7));
-        mascotas.add(new Mascota(8, "Golfo", R.drawable.perro8));
-        mascotas.add(new Mascota(9, "Rawi", R.drawable.perro9));
+    @Override
+    public void generarLinearLayoutVertical() {
+        LinearLayoutManager llm = new LinearLayoutManager(getActivity());
+        rvMascotas.setLayoutManager(llm);
     }
 
-    public void inicializarAdaptador() {
+    @Override
+    public PetAdapter crearAdaptador(ArrayList<Mascota> mascotas) {
         PetAdapter petAdapter = new PetAdapter(mascotas, getActivity());
-        listaMascotas.setAdapter(petAdapter);
+        return petAdapter;
+    }
+
+    @Override
+    public void inicializarAdaptador(PetAdapter adaptador) {
+        rvMascotas.setAdapter(adaptador);
     }
 }
