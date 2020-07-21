@@ -13,11 +13,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.cderian.petagram.adapter.PageAdapter;
-import com.cderian.petagram.fragment.HomeFragment;
-import com.cderian.petagram.fragment.PetFragment;
-import com.cderian.petagram.menu.AboutActivity;
-import com.cderian.petagram.menu.ContactoActivity;
-import com.cderian.petagram.menu.RatedPatesActivity;
+import com.cderian.petagram.vista.fragment.HomeFragment;
+import com.cderian.petagram.vista.fragment.PetFragment;
+import com.cderian.petagram.vista.menu.AboutActivity;
+import com.cderian.petagram.vista.menu.ContactoActivity;
+import com.cderian.petagram.vista.menu.RatedPatesActivity;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;

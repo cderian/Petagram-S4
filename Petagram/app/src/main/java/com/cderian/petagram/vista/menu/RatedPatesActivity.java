@@ -1,4 +1,4 @@
-package com.cderian.petagram.menu;
+package com.cderian.petagram.vista.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import com.cderian.petagram.R;
 import com.cderian.petagram.adapter.PetAdapter;
+import com.cderian.petagram.database.ConstructorMascotas;
 import com.cderian.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class RatedPatesActivity extends AppCompatActivity {
     ArrayList<Mascota> mascotas;
     RecyclerView listaMejoresMascotas;
     private Toolbar toolbar;
+
+    private ConstructorMascotas constructor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,10 @@ public class RatedPatesActivity extends AppCompatActivity {
     }
 
     public void inicializarMascotas() {
+        mascotas = new ArrayList<>();
+        constructor = new ConstructorMascotas();
+
+        //mascotas = constructor.obtenerMejoresMascotas();
         mascotas = new ArrayList<Mascota>();
         mascotas.add(new Mascota(2, "Rex", R.drawable.perro2));
         mascotas.add(new Mascota(3, "Max", R.drawable.perro3));

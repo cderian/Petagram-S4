@@ -1,4 +1,4 @@
-package com.cderian.petagram.fragment;
+package com.cderian.petagram.vista.fragment;
 
 import android.os.Bundle;
 
@@ -15,10 +15,11 @@ import com.cderian.petagram.adapter.PetAdapter;
 import com.cderian.petagram.pojo.Mascota;
 import com.cderian.petagram.presenter.HomeFragmentPresenter;
 import com.cderian.petagram.presenter.IHomeFragmentPresenter;
+import com.cderian.petagram.vista.IPetListView;
 
 import java.util.ArrayList;
 
-public class HomeFragment extends Fragment implements IHomeFragmentView {
+public class HomeFragment extends Fragment implements IPetListView {
 
     private RecyclerView rvMascotas;
     private IHomeFragmentPresenter presenter;

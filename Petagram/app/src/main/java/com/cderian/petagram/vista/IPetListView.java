@@ -1,11 +1,11 @@
-package com.cderian.petagram.fragment;
+package com.cderian.petagram.vista;
 
 import com.cderian.petagram.adapter.PetAdapter;
 import com.cderian.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
 
-public interface IHomeFragmentView {
+public interface IPetListView {
 
     public void generarLinearLayoutVertical ();
     public PetAdapter crearAdaptador (ArrayList<Mascota> contactos);

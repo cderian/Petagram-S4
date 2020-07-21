@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".menu.RatedPatesActivity"
+            android:name=".vista.menu.RatedPatesActivity"
             android:label="@string/favs_label"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".menu.ContactoActivity"
+            android:name=".vista.menu.ContactoActivity"
             android:label="@string/contact_label"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".menu.AboutActivity"
+            android:name=".vista.menu.AboutActivity"
             android:label="@string/about_label"
             android:parentActivityName=".MainActivity">
             <meta-data

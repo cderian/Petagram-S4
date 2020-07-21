@@ -115,4 +115,32 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         return likes;
     }
+
+    public ArrayList<Mascota> obtenerMejoresMascotas() {
+        ArrayList<Mascota> mascotas = new ArrayList<>();
+        String query = "SELECT * FROM (SELECT "
+                + ConstanteBDD.COLUMNA_MASCOTA_NOMBRE + ", "
+                + ConstanteBDD.COLUMNA_MASCOTA_FOTO + ", "
+                + ConstanteBDD.COLUMNA_LIKES_NUMERO + " "
+                + "FROM "
+                + ConstanteBDD.TABLA_MASCOTA + " LEFT JOIN " + ConstanteBDD.TABLA_LIKES
+                + " ON " + ConstanteBDD.COLUMNA_MASCOTA_ID + "="
+                + ConstanteBDD.COLUMNA_LIKES_ID_MASCOTA + ") "
+                + "WHERE rownum <= 5";
+
+        SQLiteDatabase bdd = this.getWritableDatabase();
+
+        Cursor registros = bdd.rawQuery(query, null);
+
+        while (registros.moveToNext()) {
+            Mascota mascota = new Mascota();
+            mascota.setNombre(registros.getString(0));
+            mascota.setFoto(registros.getInt(1));
+            mascota.setLikes(registros.getInt(2));
+            mascotas.add(mascota);
+        }
+
+        bdd.close();
+        return mascotas;
+    }
 }

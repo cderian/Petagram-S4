@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundActivity"
-    tools:context=".menu.RatedPatesActivity">
+    tools:context=".vista.menu.RatedPatesActivity">
 
     <include android:id="@+id/actionBar"
         layout="@layout/actionbar"/>

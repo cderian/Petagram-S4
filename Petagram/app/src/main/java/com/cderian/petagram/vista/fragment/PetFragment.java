@@ -1,4 +1,4 @@
-package com.cderian.petagram.fragment;
+package com.cderian.petagram.vista.fragment;
 
 import android.os.Bundle;
 

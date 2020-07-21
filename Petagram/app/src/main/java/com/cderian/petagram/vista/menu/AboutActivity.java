@@ -1,4 +1,4 @@
-package com.cderian.petagram.menu;
+package com.cderian.petagram.vista.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
