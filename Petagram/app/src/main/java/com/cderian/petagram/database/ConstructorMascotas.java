@@ -13,8 +13,6 @@ public class ConstructorMascotas {
     private Context context;
     private static final int LIKE = 1;
 
-    public ConstructorMascotas () {}
-
     public ConstructorMascotas (Context context) {
         this.context = context;
     }
@@ -91,8 +89,8 @@ public class ConstructorMascotas {
         return bdd.obtenerLikes(mascota);
     }
 
-    public ArrayList<Mascota> obtenerMejoresMascotas () {
+    public ArrayList<Mascota> obtenerTopMascotas () {
         BaseDatos bdd = new BaseDatos(this.context);
-        return bdd.obtenerMejoresMascotas();
+        return bdd.obtenerTopMascotas();
     }
 }

@@ -42,15 +42,9 @@ public class RatedPatesActivity extends AppCompatActivity {
 
     public void inicializarMascotas() {
         mascotas = new ArrayList<>();
-        constructor = new ConstructorMascotas();
+        constructor = new ConstructorMascotas(this);
 
-        //mascotas = constructor.obtenerMejoresMascotas();
-        mascotas = new ArrayList<Mascota>();
-        mascotas.add(new Mascota(2, "Rex", R.drawable.perro2));
-        mascotas.add(new Mascota(3, "Max", R.drawable.perro3));
-        mascotas.add(new Mascota(6, "Besheen", R.drawable.perro6));
-        mascotas.add(new Mascota(7, "Negro", R.drawable.perro7));
-        mascotas.add(new Mascota(9, "Rawi", R.drawable.perro9));
+        mascotas = constructor.obtenerTopMascotas();
     }
 
     public void inicializarAdaptador() {

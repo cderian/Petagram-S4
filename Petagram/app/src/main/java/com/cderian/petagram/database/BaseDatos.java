@@ -3,13 +3,8 @@ package com.cderian.petagram.database;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.os.strictmode.SqliteObjectLeakedViolation;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.cderian.petagram.pojo.Mascota;
 
@@ -116,17 +111,16 @@ public class BaseDatos extends SQLiteOpenHelper {
         return likes;
     }
 
-    public ArrayList<Mascota> obtenerMejoresMascotas() {
+    public ArrayList<Mascota> obtenerTopMascotas() {
         ArrayList<Mascota> mascotas = new ArrayList<>();
-        String query = "SELECT * FROM (SELECT "
-                + ConstanteBDD.COLUMNA_MASCOTA_NOMBRE + ", "
-                + ConstanteBDD.COLUMNA_MASCOTA_FOTO + ", "
-                + ConstanteBDD.COLUMNA_LIKES_NUMERO + " "
-                + "FROM "
-                + ConstanteBDD.TABLA_MASCOTA + " LEFT JOIN " + ConstanteBDD.TABLA_LIKES
-                + " ON " + ConstanteBDD.COLUMNA_MASCOTA_ID + "="
-                + ConstanteBDD.COLUMNA_LIKES_ID_MASCOTA + ") "
-                + "WHERE rownum <= 5";
+
+        String query = "SELECT a.*, COUNT(" + ConstanteBDD.COLUMNA_LIKES_NUMERO + ") AS likes "
+                + "FROM " + ConstanteBDD.TABLA_MASCOTA + " a "
+                + "LEFT JOIN " + ConstanteBDD.TABLA_LIKES + " b "
+                + "ON a." + ConstanteBDD.COLUMNA_MASCOTA_ID
+                + "="
+                + "b." + ConstanteBDD.COLUMNA_LIKES_ID_MASCOTA + " "
+                + "GROUP BY a.id ORDER BY likes DESC LIMIT 5";
 
         SQLiteDatabase bdd = this.getWritableDatabase();
 
@@ -134,9 +128,10 @@ public class BaseDatos extends SQLiteOpenHelper {
 
         while (registros.moveToNext()) {
             Mascota mascota = new Mascota();
-            mascota.setNombre(registros.getString(0));
-            mascota.setFoto(registros.getInt(1));
-            mascota.setLikes(registros.getInt(2));
+            mascota.setId(registros.getInt(0));
+            mascota.setNombre(registros.getString(1));
+            mascota.setFoto(registros.getInt(2));
+            mascota.setLikes(registros.getInt(3));
             mascotas.add(mascota);
         }
 
