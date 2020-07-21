@@ -75,4 +75,17 @@ public class ConstructorMascotas {
         contentValues.put(ConstanteBDD.COLUMNA_MASCOTA_FOTO, R.drawable.perro9);
         bdd.insertarMascota(contentValues);
     }
+
+    public void darLike (Mascota mascota) {
+        BaseDatos bdd = new BaseDatos(this.context);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(ConstanteBDD.COLUMNA_LIKES_ID_MASCOTA, mascota.getId());
+        contentValues.put(ConstanteBDD.COLUMNA_LIKES_NUMERO, LIKE);
+        bdd.insertarLike(contentValues);
+    }
+
+    public int obtenerLikes (Mascota mascota) {
+        BaseDatos bdd = new BaseDatos(this.context);
+        return bdd.obtenerLikes(mascota);
+    }
 }
