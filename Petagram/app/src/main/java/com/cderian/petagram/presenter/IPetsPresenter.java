@@ -1,7 +1,7 @@
 package com.cderian.petagram.presenter;
 
-public interface IHomeFragmentPresenter {
+public interface IPetsPresenter {
 
     public void obtenerMascotasBDD ();
-    public void mostrarContactos ();
+    public void mostrarMascotas ();
 }

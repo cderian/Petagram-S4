@@ -14,7 +14,7 @@ import com.cderian.petagram.R;
 import com.cderian.petagram.adapter.PetAdapter;
 import com.cderian.petagram.pojo.Mascota;
 import com.cderian.petagram.presenter.HomeFragmentPresenter;
-import com.cderian.petagram.presenter.IHomeFragmentPresenter;
+import com.cderian.petagram.presenter.IPetsPresenter;
 import com.cderian.petagram.vista.IPetListView;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment implements IPetListView {
 
     private RecyclerView rvMascotas;
-    private IHomeFragmentPresenter presenter;
+    private IPetsPresenter presenter;
     ArrayList<Mascota> mascotas;
 
     @Override
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment implements IPetListView {
     }
 
     @Override
-    public void generarLinearLayoutVertical() {
+    public void generarLayout() {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         rvMascotas.setLayoutManager(llm);
     }

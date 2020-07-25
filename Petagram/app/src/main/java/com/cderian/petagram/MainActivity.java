@@ -11,13 +11,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.cderian.petagram.adapter.PageAdapter;
 import com.cderian.petagram.vista.fragment.HomeFragment;
 import com.cderian.petagram.vista.fragment.PetFragment;
 import com.cderian.petagram.vista.menu.AboutActivity;
 import com.cderian.petagram.vista.menu.ContactoActivity;
-import com.cderian.petagram.vista.menu.RatedPatesActivity;
+import com.cderian.petagram.vista.menu.LastRatedPetsActivity;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 openBio();
                 return true;
             case R.id.action_favs:
-                openFavPets();
+                openLastRatedPets();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -78,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void openFavPets () {
-        Intent intent = new Intent(MainActivity.this, RatedPatesActivity.class);
+    private void openLastRatedPets () {
+        Intent intent = new Intent(MainActivity.this, LastRatedPetsActivity.class);
         startActivity(intent);
     }
 

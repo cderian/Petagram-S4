@@ -8,15 +8,15 @@ import com.cderian.petagram.pojo.Mascota;
 
 import java.util.ArrayList;
 
-public class HomeFragmentPresenter implements IHomeFragmentPresenter {
+public class HomeFragmentPresenter implements IPetsPresenter {
 
     private IPetListView iPetListView;
     private Context context;
     private ConstructorMascotas constructor;
     private ArrayList<Mascota> mascotas;
 
-    public HomeFragmentPresenter (IPetListView iHomeFragmentView, Context context) {
-        this.iPetListView = iHomeFragmentView;
+    public HomeFragmentPresenter (IPetListView iPetListView, Context context) {
+        this.iPetListView = iPetListView;
         this.context = context;
         obtenerMascotasBDD();
     }
@@ -25,13 +25,12 @@ public class HomeFragmentPresenter implements IHomeFragmentPresenter {
     public void obtenerMascotasBDD() {
         constructor = new ConstructorMascotas(this.context);
         mascotas = constructor.obtenerDatos();
-        mostrarContactos();
+        mostrarMascotas();
     }
 
     @Override
-    public void mostrarContactos() {
+    public void mostrarMascotas() {
         iPetListView.inicializarAdaptador(iPetListView.crearAdaptador(mascotas));
-        iPetListView.generarLinearLayoutVertical();
-
+        iPetListView.generarLayout();
     }
 }

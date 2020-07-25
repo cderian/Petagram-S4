@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public interface IPetListView {
 
-    public void generarLinearLayoutVertical ();
+    public void generarLayout();
     public PetAdapter crearAdaptador (ArrayList<Mascota> contactos);
     public void inicializarAdaptador (PetAdapter adaptador);
 
