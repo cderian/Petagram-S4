@@ -93,4 +93,9 @@ public class ConstructorMascotas {
         BaseDatos bdd = new BaseDatos(this.context);
         return bdd.obtenerTopMascotas();
     }
+
+    public ArrayList<Mascota> obtenerLastRatedMascotas() {
+        BaseDatos bdd = new BaseDatos(this.context);
+        return bdd.obtenerLastRatedMascotas();
+    }
 }

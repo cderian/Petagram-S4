@@ -138,4 +138,33 @@ public class BaseDatos extends SQLiteOpenHelper {
         bdd.close();
         return mascotas;
     }
+
+    public ArrayList<Mascota> obtenerLastRatedMascotas() {
+        ArrayList<Mascota> mascotas = new ArrayList<>();
+
+        String query = "SELECT a.*," + ConstanteBDD.COLUMNA_LIKES_NUMERO + ", "
+                + "b." + ConstanteBDD.COLUMNA_LIKES_ID + " "
+                + "FROM " + ConstanteBDD.TABLA_MASCOTA + " a "
+                + "LEFT JOIN " + ConstanteBDD.TABLA_LIKES + " b "
+                + "ON a." + ConstanteBDD.COLUMNA_MASCOTA_ID
+                + "="
+                + "b." + ConstanteBDD.COLUMNA_LIKES_ID_MASCOTA + " "
+                + "ORDER BY b." + ConstanteBDD.COLUMNA_LIKES_ID + " DESC LIMIT 5";
+
+        SQLiteDatabase bdd = this.getWritableDatabase();
+
+        Cursor registros = bdd.rawQuery(query, null);
+
+        while (registros.moveToNext()) {
+            Mascota mascota = new Mascota();
+            mascota.setId(registros.getInt(0));
+            mascota.setNombre(registros.getString(1));
+            mascota.setFoto(registros.getInt(2));
+            mascota.setLikes(registros.getInt(3));
+            mascotas.add(mascota);
+        }
+
+        bdd.close();
+        return mascotas;
+    }
 }

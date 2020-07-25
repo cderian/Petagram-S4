@@ -24,7 +24,7 @@ public class LastRatedPetsPresenter implements IPetsPresenter {
     @Override
     public void obtenerMascotasBDD() {
         constructor = new ConstructorMascotas(this.context);
-        mascotas = constructor.obtenerTopMascotas();
+        mascotas = constructor.obtenerLastRatedMascotas();
         mostrarMascotas();
     }
 
